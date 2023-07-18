@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(220, 225, 232);
+}
+
+ul {
+    list-style: none;
+}
+
+#container {
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: ;
+    width: calc(100% - 4rem);
+    max-width: 1278px;
+    min-height: 90vh;
+    background-color: rgb(248, 252, 255);
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    width: 110px;
+    padding: 2rem 0rem;
+    border-right: 1px solid rgb(202, 202, 202);
+
+    /* border: 1px solid red; */
+}
+
+h1 {
+    font-size: .8rem;
+    text-align: start;
+    opacity: .5;
+    margin-bottom: 6rem;
+
+    font-family: 'Rubik', sans-serif;
+}
+
+#nav button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+
+#nav .bi-plus-circle-fill {
+    font-size: 3rem;
+    background: transparent;
+    pointer-events: none;
+    /* border: 0; */
+}
+
+#add-colors {
+    width: 100%;
+}
+
+#add-colors ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#add-colors li {
+    display: flex;
+
+    cursor: pointer;
+}
+
+#add-colors li .color {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+/* classe das cores */
+.orange-class {
+    background-color: rgb(248, 224, 157);
+}
+
+.green-class {
+    background-color: rgb(186, 248, 157);
+}
+
+.yellow-class {
+    background-color: rgb(247, 248, 157);
+}
+
+.blue-class {
+    background-color: rgb(157, 215, 248);
+}
+
+.red-class {
+    background-color: rgb(248, 157, 157);
+}
+
+.pink-class {
+    background-color: rgb(245, 189, 245);
+}
+
+/* Cores de seleção */
+#orange .color {
+    background-color: rgb(245, 205, 132);
+}
+
+#green .color {
+    background-color: rgb(185, 231, 185);
+}
+
+#yellow .color {
+    background-color: rgb(232, 233, 156);
+}
+
+#blue .color {
+    background-color: rgb(167, 202, 242);
+}
+
+#red .color {
+    background-color: rgb(248, 157, 157);
+}
+
+#pink .color {
+    background-color: rgb(242, 167, 229);
+}
+
+.selected {
+    border: 3px solid #43a1ff;
+}
+
+/* Cor das Canetas */
+#pen-colors ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* border: 1px solid blue; */
+}
+
+#pen-colors li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+
+#pen-colors i {
+    font-size: 1rem; 
+    border-radius: 1rem;
+    padding: 2px;
+}
+
+#pen-colors .bi {
+    pointer-events: none;
+}
+
+#blue-pen i {
+    color: #0038A8;
+}
+
+#red-pen i {
+    color: #b31524;
+}
+
+#black-pen i {
+    color: #211B15;
+}
+
+#light-blue-pen i {
+    color: #4169E1;
+}
+
+/* Classes de cores para canetas */
+
+.blue-pen-class {
+    color: #0038A8;
+}
+
+.black-pen-class {
+    color: #211B15;
+}
+
+.red-pen-class {
+    color: #b31524;
+}
+
+.light-blue-pen-class {
+    color: #4169E1;
+}
+
+.selected-pen {
+    border: 3px solid #d3d4d4;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 3rem 0 1rem;
+
+
+    /* border: 1px solid red; */
+}
+
+#notes-container {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 3rem;
+    /* border: 1px solid blue; */
+}
+
+#search-notes {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    /* border: 1px solid red; */
+}
+
+#search-notes input {
+    width: 200px;
+    padding: .3rem .8rem;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 0;
+    /* border: 1px solid rgb(194, 194, 194); */
+    /* border: 1px solid rgb(0, 30, 255); */
+}
+
+#search-notes i {
+    color: rgb(172, 170, 170);
+}
+
+#search-notes input::placeholder {
+    font-size: .8rem;
+    color: rgb(172, 170, 170);
+}
+
+#board {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+
+    /* border: 1px solid rgb(242, 192, 192); */
+}
+
+.note {
+    min-width: 230px;
+    height: 240px;
+    /* padding: 1.5rem 1.5rem 1rem 1rem; */
+    position: relative;
+    border: 0;
+    /* border: 1px solid rgb(216, 215, 215); */
+    border-radius: 20px;
+    /* box-shadow: 1px 1px 5px rgb(95, 94, 94); */
+}
+
+.note textarea {
+    resize: none;
+    overflow: hidden;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+    padding: 1.5rem 1.5rem 1rem 1rem;
+}
+
+.note textarea::placeholder {
+    opacity: .8;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.note i {
+    font-size: 1.5rem;
+    opacity: 0;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.note:hover>i {
+    opacity: .4;
+}
+
+.note .bi-x-circle-fill {
+    position: absolute;
+    top: 15px;
+    right: 8px;
+    font-size: 1rem;
+}
+
+.note .bi-pin-fill {
+    position: absolute;
+    bottom: 5px;
+    right: 8px;
+    font-size: 1.7rem;
+}
+
+.note .fixed {
+    opacity: 1;
+}
+
+/* .fixed:hover>i{
+    opacity: 1;
+} */
