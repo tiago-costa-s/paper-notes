@@ -20,7 +20,7 @@ ul {
     width: calc(100% - 4rem);
     max-width: 1278px;
     min-height: 90vh;
-    background-color: rgb(248, 252, 255);
+    background-color: rgb(252, 252, 252);
     border-radius: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.22);
     overflow: hidden;
@@ -314,7 +314,7 @@ h2 {
     font-size: 1.7rem;
 }
 
-.note .fixed {
+.fixed .bi-pin-fill{
     opacity: 1;
 }
 

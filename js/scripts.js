@@ -10,18 +10,22 @@ const textarea = document.querySelector("textarea");
 const colorsBtn = document.querySelectorAll("#add-colors li");
 const colorsPen = document.querySelectorAll("#pen-colors li");
 
-
 //Funções
 
 //exibe as notas criadas
 function showNotes() {
+    cleanNotes();
 
     getNoteLs().forEach((note) => {
-
         const noteElement = createNote(note.id, note.content, note.color, note.pen, note.fixed);
 
         boardElement.appendChild(noteElement);
     })
+};
+
+//limpa notas
+function cleanNotes() {
+    boardElement.replaceChildren([]);
 };
 
 //adicionar o objeto nota
@@ -49,8 +53,6 @@ function addNote(id, content, color, pen, fixed) {
     saveNotesLs(notes);
 };
 
-
-
 //gera o id
 function genereteId() {
     const id = Math.floor(Math.random() * 5000);
@@ -72,8 +74,6 @@ colorsBtn.forEach((btn) => {
         btn.querySelector(".color").classList.add("selected");
         selected = e.target;
         colorSelected = selected.id;
-
-        // console.log(colorSelected);
     });
 });
 
@@ -81,32 +81,27 @@ colorsBtn.forEach((btn) => {
 function addColor() {
     let color = colorSelected;
 
-    if (color == "orange") {
-        color = "orange-class";
-    }
-
-    if (color == "green") {
-        color = "green-class";
-    }
-
-    if (color == "yellow") {
-        color = "yellow-class";
-    }
-
-    if (color == "blue") {
-        color = "blue-class"
-    }
-
-    if (color == "red") {
-        color = "red-class"
-    }
-
-    if (color == "yellow") {
-        color == "yellow-class"
-    }
-
-    if (color == "pink") {
-        color = "pink-class"
+    switch (color) {
+        case "orange":
+            color = "orange-class";
+            break;
+        case "green":
+            color = "green-class";
+            break;
+        case "yellow":
+            color = "yellow-class";
+            break;
+        case "blue":
+            color = "blue-class";
+            break;
+        case "red":
+            color = "red-class";
+            break;
+        case "pink":
+            color = "pink-class";
+            break;
+        default:
+            color = "orange";
     }
     return color;
 };
@@ -178,6 +173,10 @@ function createNote(id, content, color, pen, fixed) {
 
     noteElement.appendChild(xCircleIcon);
 
+    if (fixed) {
+        noteElement.classList.add("note", "fixed");
+    }
+
     //Eventos do elemento 
     //remove nota
     noteElement.querySelector(".bi-x-circle-fill").addEventListener("click", () => {
@@ -186,11 +185,41 @@ function createNote(id, content, color, pen, fixed) {
 
     //fixa nota
     noteElement.querySelector(".bi-pin-fill").addEventListener("click", () => {
-        console.log("FIXAR");
-        pinIcon.classList.toggle("fixed");
+        fixedNoteLs(id);
+    });
+
+    //insere o texto a nota
+    noteElement.querySelector("textarea").addEventListener("keyup", (e) => {
+        const noteContent = e.target.value;
+
+        insertText(id, noteContent);
     });
 
     return noteElement;
+};
+
+//insere o texto a nota
+function insertText(id, newContent) {
+    const notes = getNoteLs();
+
+    const targetNote = notes.filter((note) => note.id === id)[0];
+    targetNote.content = newContent;
+
+    saveNotesLs(notes);
+
+    saveNotesLs();
+};
+
+//fixar a nota 
+function fixedNoteLs(id) {
+    const notesFixed = getNoteLs();
+
+    const targetNotesFixed = notesFixed.filter((note) => note.id === id)[0];
+    targetNotesFixed.fixed = !targetNotesFixed.fixed;
+
+    saveNotesLs(notesFixed);
+
+    showNotes();
 };
 
 //Eventos
@@ -199,7 +228,6 @@ createNoteBtn.addEventListener("click", () => {
 });
 
 //Localstorage
-
 //Adiciona a nota na localstorage
 function saveNotesLs(notes) {
     localStorage.setItem("notes", JSON.stringify(notes));
@@ -216,16 +244,9 @@ function getNoteLs() {
 function removeNoteLs(id, element) {
     const notes = getNoteLs().filter((note) => note.id !== id);
 
-    console.log(notes)
     saveNotesLs(notes);
 
     boardElement.removeChild(element);
-};
-
-//fixar a nota e salvar na localstorage e no doom
-
-function fixedNoteLs() {
-    const nota = getNoteLs();
 };
 
 getNoteLs();
