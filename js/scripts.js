@@ -206,8 +206,6 @@ function insertText(id, newContent) {
     targetNote.content = newContent;
 
     saveNotesLs(notes);
-
-    saveNotesLs();
 };
 
 //fixar a nota 
