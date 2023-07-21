@@ -12,6 +12,21 @@ const colorsPen = document.querySelectorAll("#pen-colors li");
 
 //Funções
 
+function atencao() {
+    const h3 = document.querySelector("#board-notification");
+    const notes = getNoteLs();
+    if (notes.length == 0) {
+        h3.style.display = "flex";
+        console.log(notes)
+    } else {
+        h3.style.display = "none";
+    }
+};
+
+window.addEventListener("load", () => {
+    atencao();
+})
+
 //exibe as notas criadas
 function showNotes() {
     cleanNotes();
@@ -40,7 +55,6 @@ function addNote(id, content, color, pen, fixed) {
         pen: addColorPen(),
         fixed: false,
     };
-    console.log(noteObject);
 
     const noteElement = createNote(noteObject.id, noteObject.content, noteObject.color, noteObject.pen);
 
@@ -48,9 +62,8 @@ function addNote(id, content, color, pen, fixed) {
 
     notes.push(noteObject);
 
-    console.log(notes);
-
     saveNotesLs(notes);
+    atencao();
 };
 
 //gera o id
@@ -114,15 +127,13 @@ colorsPen.forEach((pen) => {
 
     pen.addEventListener("click", (e) => {
         colorsPen.forEach((pen) => {
-            pen.querySelector(".bi-pen-fill").classList.remove("selected-pen");
+            pen.querySelector(".bi-pencil-fill").classList.remove("selected-pen");
         });
 
-        pen.querySelector(".bi-pen-fill").classList.add("selected-pen");
+        pen.querySelector(".bi-pencil-fill").classList.add("selected-pen");
 
         penColorSelected = e.target;
         selectedColorPen = penColorSelected.id;
-
-        console.log(selectedColorPen)
     })
 });
 
@@ -181,6 +192,7 @@ function createNote(id, content, color, pen, fixed) {
     //remove nota
     noteElement.querySelector(".bi-x-circle-fill").addEventListener("click", () => {
         removeNoteLs(id, noteElement);
+        atencao()
     });
 
     //fixa nota

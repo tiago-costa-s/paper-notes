@@ -24,7 +24,10 @@
     <header></header>
     <div id="container">
         <nav id="nav">
-            <h1>Paper Note</h1>
+            <div id="logo-container">
+                <h1>Paper Note</h1>
+                <i class="bi bi-stickies"></i>
+            </div>
             <button id="create"><i class="bi bi-plus-circle-fill"></i></button>
             <!-- Seleção de cores -->
             <div id="add-colors">
@@ -53,16 +56,13 @@
             <div id="pen-colors">
                 <ul>
                     <li id="black-pen">
-                        <i class="bi bi-pen-fill selected-pen"></i>
-                    </li>
-                    <li id="blue-pen">
-                        <i class="bi bi-pen-fill "></i>
-                    </li>
-                    <li id="red-pen">
-                        <i class="bi bi-pen-fill"></i>
+                        <i class="bi bi-pencil-fill selected-pen"></i>
                     </li>
                     <li id="light-blue-pen">
-                        <i class="bi bi-pen-fill"></i>
+                        <i class="bi bi-pencil-fill"></i>
+                    </li>
+                    <li id="red-pen">
+                        <i class="bi bi-pencil-fill"></i>
                     </li>
                 </ul>
             </div>
@@ -75,13 +75,12 @@
                 <input type="text" placeholder="Buscar">
             </div>
 
-            <div id="board">
-                <!-- <div class="note">
-                    <textarea placeholder="Adicione um texto"></textarea>
-                    <i class="bi bi-pin-fill fixed"></i>
-                    <i class="bi bi-x-circle-fill"></i>
-                </div> -->
+            <div id="board"></div>
+            <div id="board-notification">
+                <h3>Você não possui notas criadas</h3>
+                <!-- <i class="bi bi-stickies-fill"></i> -->
             </div>
+
         </div>
     </div>
 
