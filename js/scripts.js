@@ -1,3 +1,4 @@
+"use strict"
 //Seletores
 
 // elementos
@@ -11,7 +12,7 @@ const colorsBtn = document.querySelectorAll("#add-colors li");
 const colorsPen = document.querySelectorAll("#pen-colors li");
 
 //Funções
-
+//notificação sobre nota
 function atencao() {
     const h3 = document.querySelector("#board-notification");
     const notes = getNoteLs();
@@ -141,20 +142,22 @@ colorsPen.forEach((pen) => {
 function addColorPen() {
     let color = selectedColorPen;
 
-    if (color == "blue-pen") {
-        color = "blue-pen-class";
-    }
+    switch (color) {
 
-    if (color == "black-pen") {
-        color = "black-pen-class";
-    }
+        case "black-pen":
+            color = "black-pen-class";
+            break;
 
-    if (color == "red-pen") {
-        color = "red-pen-class";
-    }
+        case "light-blue-pen":
+            color = "light-blue-pen-class";
+            break;
 
-    if (color == "light-blue-pen") {
-        color = "light-blue-pen-class";
+        case "red-pen":
+            color = "red-pen-class";
+            break;
+
+        default:
+            color = "black-pen-class";
     }
 
     return color;
@@ -246,8 +249,9 @@ function saveNotesLs(notes) {
 //pega a nota na localstorage
 function getNoteLs() {
     const notesLs = JSON.parse(localStorage.getItem("notes") || "[]");
+    const orderedNotes = notesLs.sort((a, b) => a.fixed > b.fixed ? -1 : 1);
 
-    return notesLs;
+    return orderedNotes;
 };
 
 //remove a nota da localstorage e no doom
