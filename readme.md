@@ -7,10 +7,9 @@ link: https://paper-notes.vercel.app/
 
 
 ## Tecnologias Utilizadas 
-:----------|
-HTML 5     |
-CSS 3      |
-Javascript |
+HTML 5     
+CSS 3      
+Javascript 
 
 
 ## Recursos
