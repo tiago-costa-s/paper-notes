@@ -40,7 +40,5 @@ Tiago Costa;
 ```
 
 
-
 ![](https://i.postimg.cc/Kjkt0w59/2.png)
-![](https://i.postimg.cc/qBycShVQ/3.png)
 ![](https://i.postimg.cc/MThnpTyD/1.png)
