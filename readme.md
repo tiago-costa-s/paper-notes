@@ -1,4 +1,4 @@
 link: https://paper-notes.vercel.app/
 
 
-![](https://i.postimg.cc/nV51sQjs/Screenshot-6.png)
+![](https://i.postimg.cc/Gt2fVMKY/1.png)
