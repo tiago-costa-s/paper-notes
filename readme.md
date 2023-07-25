@@ -1,15 +1,15 @@
 # Paper Notes
 O Paper Notes e um aplicativo web, que permite ao usuario criar notas de forma simples e rapida, ele possui um visual charmoso e bem intuitivo bem facil de mexer.
 
-### Link do Projeto
+## Link do Projeto
 link: https://paper-notes.vercel.app/
 
-### Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - HTML 5 
 - CSS 3
 - Javascript
 
-### Recursos
+## Recursos
 Codigo com HTML semantico;
 Responsividade;
 Flex-box;
@@ -17,10 +17,10 @@ Pagina dinamica;
 Localstorage;
 Percistencia de dados ;
 
-### Ferramentas
+## Ferramentas
 Visual Studio Code
 
-### Colaborador
+## Colaborador
 Tiago Costa
 
 
