@@ -11,9 +11,9 @@ link: https://paper-notes.vercel.app/
 
 ## Tecnologias Utilizadas 
 ```
-- HTML 5     
-- CSS 3      
-- Javascript 
+- HTML 5;     
+- CSS 3;      
+- Javascript;
 ```
 
 
@@ -24,21 +24,20 @@ link: https://paper-notes.vercel.app/
 - Flex-box;
 - Página dinâmica;
 - Localstorage;
-- Persistência de dados ;
+- Persistência de dados;
 ```
 
 
 ## Ferramentas
 ```
-Visual Studio Code
+Visual Studio Code;
 ```
 
 
 ## Colaborador
 ```
-Tiago Costa
+Tiago Costa;
 ```
 
 
-
-![](https://i.postimg.cc/Gt2fVMKY/1.png)
+![](https://i.postimg.cc/MThnpTyD/1.png)
