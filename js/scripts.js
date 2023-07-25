@@ -1,6 +1,5 @@
 "use strict"
 //Seletores
-
 // elementos
 const boardElement = document.querySelector("#board");
 const colors = document.querySelector(".colors");
@@ -11,9 +10,11 @@ const textarea = document.querySelector("textarea");
 const colorsBtn = document.querySelectorAll("#add-colors li");
 const colorsPen = document.querySelectorAll("#pen-colors li");
 
+const searchIcon = document.querySelector("#search-notes");
+
 //Funções
 //notificação sobre nota
-function atencao() {
+function showNotification() {
     const h3 = document.querySelector("#board-notification");
     const notes = getNoteLs();
     if (notes.length == 0) {
@@ -25,7 +26,7 @@ function atencao() {
 };
 
 window.addEventListener("load", () => {
-    atencao();
+    showNotification();
 })
 
 //exibe as notas criadas
@@ -64,7 +65,7 @@ function addNote(id, content, color, pen, fixed) {
     notes.push(noteObject);
 
     saveNotesLs(notes);
-    atencao();
+    showNotification();
 };
 
 //gera o id
@@ -195,7 +196,7 @@ function createNote(id, content, color, pen, fixed) {
     //remove nota
     noteElement.querySelector(".bi-x-circle-fill").addEventListener("click", () => {
         removeNoteLs(id, noteElement);
-        atencao()
+        showNotification()
     });
 
     //fixa nota
@@ -214,11 +215,11 @@ function createNote(id, content, color, pen, fixed) {
 };
 
 //insere o texto a nota
-function insertText(id, newContent) {
+function insertText(id, content) {
     const notes = getNoteLs();
 
     const targetNote = notes.filter((note) => note.id === id)[0];
-    targetNote.content = newContent;
+    targetNote.content = content;
 
     saveNotesLs(notes);
 };
@@ -240,6 +241,13 @@ createNoteBtn.addEventListener("click", () => {
     addNote();
 });
 
+
+searchIcon.addEventListener("keyup", (e) => {
+    const search = e.target.value;
+
+    searchNotes(search);
+});
+
 //Localstorage
 //Adiciona a nota na localstorage
 function saveNotesLs(notes) {
@@ -249,6 +257,7 @@ function saveNotesLs(notes) {
 //pega a nota na localstorage
 function getNoteLs() {
     const notesLs = JSON.parse(localStorage.getItem("notes") || "[]");
+    //re-ordenação de notas fixadas
     const orderedNotes = notesLs.sort((a, b) => a.fixed > b.fixed ? -1 : 1);
 
     return orderedNotes;
@@ -261,6 +270,28 @@ function removeNoteLs(id, element) {
     saveNotesLs(notes);
 
     boardElement.removeChild(element);
+};
+
+//buscar nota(s)
+function searchNotes(search) {
+    const searchResults = getNoteLs().filter((note) => {
+        return note.content.includes(search);
+    });
+
+    if (search !== "") {
+        cleanNotes();
+
+        searchResults.forEach((note) => {
+            const noteElement = createNote(note.id, note.content, note.color, note.pen, note.fixed);
+            boardElement.appendChild(noteElement)
+        });
+
+        return;
+    }
+
+    cleanNotes()
+
+    showNotes();
 };
 
 getNoteLs();
