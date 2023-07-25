@@ -1,6 +1,7 @@
 # Paper Notes
 ```
-O Paper Notes é um aplicativo web, que permite ao usuário criar notas de forma simples e rápida, ele possui um visual charmoso e bem intuitivo bem fácil de mexer.
+O Paper Notes é um aplicativo web, que permite ao usuário criar notas de;
+forma simples e rápida, ele possui um visual charmoso e bem intuitivo bem; fácil de mexer.
 ```
 
 
