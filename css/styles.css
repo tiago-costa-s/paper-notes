@@ -16,7 +16,6 @@ ul {
 #container {
     margin: 3rem auto;
     display: flex;
-
     width: calc(100% - 4rem);
     max-width: 1278px;
     min-height: 90vh;
@@ -204,8 +203,7 @@ h2 {
     padding: 2rem 3rem;
 }
 
-#search-notes {
- 
+#search-notes { 
     margin-left: auto;
     display: flex;
     align-items: center;
@@ -215,7 +213,6 @@ h2 {
     margin-bottom: 2rem;
     border: 0;
     border-radius: 30px;
-
 }
 
 #search-notes input {
@@ -226,7 +223,6 @@ h2 {
     /* border-radius: 30px; */
     outline: 0;
     border: 0;
-
 }
 
 #search-notes i {
@@ -256,7 +252,6 @@ h2 {
 }
 
 #board-notification h3 {
-
     font-size: 3rem;
     font-size: clamp(2rem, 3vw, 3rem);
     color: #000000;
