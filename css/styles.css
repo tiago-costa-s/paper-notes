@@ -275,6 +275,7 @@ h2 {
     font-size: clamp(2rem, 3vw, 3rem);
     color: #000000;
     opacity: .1;
+    text-align: center;
 }
 
 .note {
@@ -408,7 +409,7 @@ h2 {
         justify-content: space-between;
         align-items: center;
         margin: 0rem 0 1rem;
-        padding: 1rem 0;
+        padding: .5rem 0 1rem;
 
         /* border: 1px solid red; */
     }
@@ -472,7 +473,7 @@ h2 {
     }
 
     .note .bi-pin-fill {
-
+        cursor: none;
         font-size: 2.5rem;
     }
 
