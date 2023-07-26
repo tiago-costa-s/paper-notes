@@ -374,7 +374,7 @@ h2 {
     #add-colors ul {
         display: flex;
         flex-direction: row;
-        gap: .5rem;
+        gap: 1rem;
     }
 
     #add-colors li .color {
