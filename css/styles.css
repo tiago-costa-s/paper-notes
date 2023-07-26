@@ -423,10 +423,14 @@ h2 {
         padding: .5rem 1rem;
     }
 
-    #search-notes {    
-        width: 150px;
+    #search-container {
+    
+        justify-content: center;
     }
 
+    #search-notes {
+        width: 150px;
+    }
 
     #board {
         flex-direction: column;
