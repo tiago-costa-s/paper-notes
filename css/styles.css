@@ -192,36 +192,54 @@ h1 {
     background-color: rgb(233, 233, 233);
 }
 
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 0 2.5rem;
+    padding: 1rem 0;
+
+    /* border: 1px solid red; */
+}
+
 h2 {
     font-size: 3rem;
-    margin: 3rem 0 1rem;
 }
 
 #notes-container {
     width: 100%;
-    padding: 2rem 3rem;
+    padding: 2rem;
+}
+
+#search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 50px;
+    
+    /* border: 2px solid blue; */
 }
 
 #search-notes {
-    margin-left: auto;
     display: flex;
     align-items: center;
-    justify-content: right;
     width: 200px;
     padding: 0 5px;
-    margin-bottom: 2rem;
     border: 0;
     border-radius: 30px;
+
+    /* border: 1px solid red; */
 }
 
 #search-notes input {
     width: 100%;
     padding: 5px 5px 5px 5px;
     background-color: transparent;
-    border: 2px solid blue;
-    /* border-radius: 30px; */
     outline: 0;
-    border: 0;
+    border: 0; 
+    /* border-radius: 30px; */
+
+    /* border: 2px solid blue; */
 }
 
 #search-notes i {
@@ -258,8 +276,8 @@ h2 {
 }
 
 .note {
-    min-width: 230px;
-    height: 240px;
+    min-width: 240px;
+    height: 250px;
     position: relative;
     border: 0;
     border-radius: 20px;
@@ -344,13 +362,6 @@ h2 {
         display: none;
     }
 
-    h1 {
-        font-size: .8rem;
-        text-align: start;
-        font-family: 'Rubik', sans-serif;
-        margin-bottom: .5rem;
-    }
-
     #add-colors {
         display: flex;
         flex-direction: row;
@@ -382,7 +393,6 @@ h2 {
         flex-direction: row;
         gap: 1rem;
 
-
         /* border: 1px solid blue; */
     }
 
@@ -391,14 +401,24 @@ h2 {
         padding: 5px;
     }
 
+    #header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0rem 0 1rem;
+        padding: 1rem 0;
+    
+        /* border: 1px solid red; */
+    }   
+
     h2 {
         font-size: 2rem;
-        margin: 0;
+        opacity: .2;
     }
 
     #notes-container {
         width: 100%;
-        padding: .5rem;
+        padding: .5rem 1rem;
     }
 
     #board {
@@ -423,13 +443,14 @@ h2 {
 
     .note {
         min-width: 230px;
-        height: 240px;
+        height: 350px;
         position: relative;
         border: 0;
         border-radius: 20px;
     }
 
     .note textarea {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        padding: 1.5rem 1.5rem;
     }
 }
