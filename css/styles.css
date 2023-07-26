@@ -332,9 +332,10 @@ h2 {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: .5rem;
         width: auto;
-        padding: 1rem .5rem;
+        padding: .5rem;
 
         border-bottom: 1px solid rgb(233, 233, 233);
     }
@@ -366,20 +367,27 @@ h2 {
     }
 
     #add-colors li .color {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
+    }
+
+    #pen-colors {
+        margin-left: auto;
+        display: block;
+        /* border: 1px solid red; */
     }
 
     #pen-colors ul {
         display: flex;
         flex-direction: row;
-        gap: 0rem;
+        gap: 1rem;
+
 
         /* border: 1px solid blue; */
     }
 
     #pen-colors i {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         padding: 5px;
     }
 
