@@ -74,7 +74,6 @@ h1 {
 
 #add-colors li {
     display: flex;
-
     cursor: pointer;
 }
 
@@ -203,13 +202,13 @@ h2 {
     padding: 2rem 3rem;
 }
 
-#search-notes { 
+#search-notes {
     margin-left: auto;
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 200px;  
-    padding: 0 5px; 
+    width: 200px;
+    padding: 0 5px;
     margin-bottom: 2rem;
     border: 0;
     border-radius: 30px;
@@ -217,7 +216,7 @@ h2 {
 
 #search-notes input {
     width: 100%;
-    padding: 5px 5px 5px  5px;
+    padding: 5px 5px 5px 5px;
     background-color: transparent;
     border: 2px solid blue;
     /* border-radius: 30px; */
@@ -314,4 +313,111 @@ h2 {
 
 .fixed .bi-pin-fill {
     opacity: 1;
+}
+
+@media (max-width: 480px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - .5rem);
+        min-height: 100vh;
+        border-radius: 10px;
+        box-shadow: 0;
+        overflow: hidden;
+        margin-top: .5rem;
+    }
+
+    #nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: auto;
+        padding: 1rem .5rem;
+
+        border-bottom: 1px solid rgb(233, 233, 233);
+    }
+
+    #logo-container {
+        display: none;
+    }
+
+    h1 {
+        font-size: .8rem;
+        text-align: start;
+        font-family: 'Rubik', sans-serif;
+        margin-bottom: .5rem;
+    }
+
+    #add-colors {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: auto;
+
+        /* border: 1px solid red; */
+    }
+
+    #add-colors ul {
+        display: flex;
+        flex-direction: row;
+        gap: .5rem;
+    }
+
+    #add-colors li .color {
+        width: 25px;
+        height: 25px;
+    }
+
+    #pen-colors ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0rem;
+
+        /* border: 1px solid blue; */
+    }
+
+    #pen-colors i {
+        font-size: 1.3rem;
+        padding: 5px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    #notes-container {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    #board {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    #board-notification {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 5px;
+    }
+
+    #board-notification h3 {
+        font-size: 3rem;
+        font-size: clamp(2rem, 3vw, 3rem);
+        color: #000000;
+        opacity: .1;
+    }
+
+    .note {
+        min-width: 230px;
+        height: 240px;
+        position: relative;
+        border: 0;
+        border-radius: 20px;
+    }
 }
