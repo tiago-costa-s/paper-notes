@@ -5,7 +5,7 @@ O Paper Notes é um aplicativo web, que permite ao usuário criar notas de forma
 
 ## Link do Projeto
 ```
-[link: https://paper-notes.vercel.app/](https://paper-notes.vercel.app/)
+https://paper-notes.vercel.app/
 ```
 
 
